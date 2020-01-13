@@ -1,4 +1,6 @@
-import {UserId} from './UserId';
+import {UserId}    from './UserId';
+import {UserName}  from './UserName';
+import {UserEmail} from './UserEmail';
 
 export class User{
     private _id: UserId;
@@ -10,4 +12,5 @@ export class User{
         this._name  = name;
         this._email = email;
     }
+
 }
