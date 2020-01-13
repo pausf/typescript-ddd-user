@@ -7,12 +7,13 @@ import {UserName}      from '../../../Domain/User/UserName';
 export class AddUserCommandHandler {
     private adder: AddUser;
 
-    constructor(adder: AddUserCommand) {
+    constructor(adder: AddUser) {
         this.adder = adder;
     }
 
     public command(addUserCommand: AddUserCommand) {
-       return  AddUser.add(
+
+       return  this.adder.add(
           new UserId(addUserCommand.id),
           new UserName(addUserCommand.name),
           new UserEmail(addUserCommand.email),

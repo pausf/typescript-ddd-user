@@ -1,8 +1,8 @@
 
 export class AddUserCommand {
-    private _id: string;
-    private _name: string;
-    private _email: string;
+    private readonly _id: string;
+    private readonly _name: string;
+    private readonly _email: string;
 
     constructor(id: string, name: string, email: string) {
         this._id    = id;

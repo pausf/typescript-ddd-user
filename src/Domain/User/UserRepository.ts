@@ -1,4 +1,4 @@
-import {User} from '../../../dist/Domain/User/User';
+import {User} from './User';
 
 export interface UserRepository {
     add(user: User);

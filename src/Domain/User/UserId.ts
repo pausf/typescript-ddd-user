@@ -14,7 +14,7 @@ export class UserId {
     }
 
     protected isValidUuid = (id: string) => {
-        if (isUUID(id)) {
+        if (!isUUID(id)) {
             throw new HttpException({
                 status: HttpStatus.INTERNAL_SERVER_ERROR,
                 error: 'Its not valid Uuid',
@@ -23,7 +23,7 @@ export class UserId {
     }
 
     protected isNotEmpty = (id: string) => {
-        if ( !id || id !== '' ) {
+        if ( !id) {
             throw new HttpException({
                 status: HttpStatus.INTERNAL_SERVER_ERROR,
                 error: 'Its empty',

@@ -9,7 +9,7 @@ export class UserName {
     }
 
     protected isNotEmpty = (value: string) => {
-        if ( !value || value !== '' ) {
+        if ( !value ) {
             throw new HttpException({
                 status: HttpStatus.INTERNAL_SERVER_ERROR,
                 error: 'Its empty',
