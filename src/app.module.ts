@@ -1,6 +1,6 @@
 import { Module }           from '@nestjs/common';
 import { AppService }       from './app.service';
-import {UserPostController} from './ui/http/user.post.controller';
+import {UserPostController} from './UI/Http/user.post.controller';
 
 @Module({
   imports: [],

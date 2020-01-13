@@ -13,4 +13,15 @@ export class User{
         this._email = email;
     }
 
+    get id(): UserId {
+        return this._id;
+    }
+
+    get name(): UserName {
+        return this._name;
+    }
+
+    get email(): UserEmail {
+        return this._email;
+    }
 }
