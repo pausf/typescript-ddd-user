@@ -5,15 +5,15 @@ export class UserName {
 
     constructor(value: string) {
         this.isNotEmpty(value);
-        this.value      = value;
+        this.value = value;
     }
 
     protected isNotEmpty = (value: string) => {
-        if ( !value ) {
+        if (!value) {
             throw new HttpException({
                 status: HttpStatus.INTERNAL_SERVER_ERROR,
                 error: 'Its empty',
             }, 500);
         }
-    }
+    };
 }

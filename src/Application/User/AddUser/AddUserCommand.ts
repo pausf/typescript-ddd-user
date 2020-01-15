@@ -1,4 +1,3 @@
-
 export class AddUserCommand {
     private readonly _id: string;
     private readonly _name: string;
