@@ -5,13 +5,10 @@ import {injectable}     from 'inversify';
 @injectable()
 export class InMemoryUserRepository implements UserRepository {
 
-    private users: User[];
+    private  users: User[] = [];
 
     public add(user: User): void {
-       const variable = 'ss';
+      this.users.push(user);
     }
 
-    public count(): number {
-        return this.users.length;
-    }
 }

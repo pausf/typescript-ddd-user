@@ -8,6 +8,7 @@ import {TYPES}                   from '../../types';
 
 @Controller()
 export class UserPostController {
+
     constructor(private readonly appService: AppService) {}
 
     @Post()
@@ -15,6 +16,8 @@ export class UserPostController {
        let userRepository = container.get<UserRepository>(TYPES.UserRepository);
        const command = new AddUserCommand('a8d17737-fc5b-4a0d-87c4-e87ae31032fb', 'Pau', 'pau@email.com');
        const addUserCommandHandler = new AddUserCommandHandler(new AddUser(userRepository));
-       return addUserCommandHandler.command(command);
+       addUserCommandHandler.command(command);
+
+       return `User was created with id: ${command.id}`;
     }
 }

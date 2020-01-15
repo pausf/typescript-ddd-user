@@ -15,11 +15,9 @@ export class AddUser {
         this._userRepository = userRepository;
     }
 
-    public add(userId: UserId, userName: UserName , userEmail: UserEmail): string {
-
+    public add(userId: UserId, userName: UserName , userEmail: UserEmail): void {
         const user = new User(userId, userName, userEmail);
         this._userRepository.add(user);
-        return 'true';
     }
 }
 export { UserRepository };
