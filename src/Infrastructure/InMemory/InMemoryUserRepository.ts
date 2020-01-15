@@ -8,7 +8,7 @@ export class InMemoryUserRepository implements UserRepository {
     private users: User[];
 
     public add(user: User): void {
-        this.users.push(user);
+       const variable = 'ss';
     }
 
     public count(): number {

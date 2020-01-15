@@ -1,6 +1,4 @@
-
 const TYPES = {
-    UserRepository: Symbol.for('UserRepository'),
-}
-
+    UserRepository: Symbol.for('InMemoryUserRepository'),
+};
 export { TYPES };

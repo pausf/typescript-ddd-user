@@ -3,17 +3,23 @@ import {UserId}                 from '../../../Domain/User/UserId';
 import {UserName}               from '../../../Domain/User/UserName';
 import {UserEmail}              from '../../../Domain/User/UserEmail';
 import {User}                   from '../../../Domain/User/User';
-import {InMemoryUserRepository} from '../../../Infrastructure/InMemory/InMemoryUserRepository';
-import { injectable, inject }   from 'inversify'
+import { injectable, inject }   from 'inversify';
 import {TYPES}                  from '../../../types';
 
+@injectable()
 export class AddUser {
-    @inject(TYPES.UserRepository) private userRepository : InMemoryUserRepository;
+
+    private _userRepository: UserRepository;
+
+    constructor(@inject(TYPES.UserRepository) userRepository: UserRepository) {
+        this._userRepository = userRepository;
+    }
 
     public add(userId: UserId, userName: UserName , userEmail: UserEmail): string {
-        const user = new User(userId, userName, userEmail);
-        this.userRepository.add(user);
 
-        return 'ddd';
+        const user = new User(userId, userName, userEmail);
+        this._userRepository.add(user);
+        return 'true';
     }
 }
+export { UserRepository };
