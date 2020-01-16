@@ -16,3 +16,4 @@ export class FindUser {
         return this.userRepository.find(id);
     }
 }
+export {UserRepository};
